@@ -8,9 +8,20 @@ import co.edu.udea.tecnicas.dao.StudentDAO;
 
 public class StudentList implements StudentDAO 
 {
-    public static final List<StudentDTO> studentBD = new ArrayList<StudentDTO>();
+    public final List<StudentDTO> studentBD;
 
+    public StudentList() {
+        studentBD = new ArrayList<StudentDTO>();
+    }   
+
+    /**
+     * Create
+     * @param student
+     * @return 
+     */
+    @Override
     public boolean store(StudentDTO student) {
+        
         return studentBD.add(student);
     }
 
@@ -25,18 +36,18 @@ public class StudentList implements StudentDAO
 
     @Override
     public List<StudentDTO> listing() {
-        List<StudentDTO> estudiantes = new ArrayList<StudentDTO>();
-        for (StudentDTO estudiante : studentBD) {
-                estudiantes.add(estudiante);
+        List<StudentDTO> students = new ArrayList<StudentDTO>();
+        for (StudentDTO student : studentBD) {
+                students.add(student);
         }
-        return estudiantes;
+        return students;
     }
 
     @Override
     public boolean delete(String identificacion) {
-        for (StudentDTO estudiante : studentBD) {
-            if (estudiante.getId().equals(identificacion)) {
-                studentBD.remove(estudiante);
+        for (StudentDTO student : studentBD) {
+            if (student.getId().equals(identificacion)) {
+                studentBD.remove(student);
                 return true;
             }
         }
@@ -44,11 +55,11 @@ public class StudentList implements StudentDAO
     }
 
     @Override
-    public boolean update(StudentDTO parametro) {
+    public boolean update(StudentDTO data) {
         for (StudentDTO estudiante : studentBD) {
-            if (estudiante.getId().equals(parametro.getId())){
+            if (estudiante.getId().equals(data.getId())){
                 studentBD.remove(estudiante);
-                studentBD.add(parametro);
+                studentBD.add(data);
                 return true;
             }
         }

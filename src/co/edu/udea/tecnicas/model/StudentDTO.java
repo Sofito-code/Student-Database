@@ -7,27 +7,34 @@ public class StudentDTO
 {                                       
     private String names;
     private String lastNames;
+    private String yearsOld;
     private char gender;
     private String id;        
     private String group;
     private String registrationNumber;
 
-    public StudentDTO(String names, String lastNames, char gender, String id, String group) {
+    public StudentDTO(String names, String lastNames, String yearsOld, char gender, String id, String group, String registrationNumber) {
         this.names = names;
         this.lastNames = lastNames;
+        this.yearsOld = yearsOld;
         this.gender = gender;
         this.id = id;
         this.group = group;
+        this.registrationNumber = registrationNumber;
     }
+
+    
     /**
      * Student empty
      */
     public StudentDTO() {
         this.names = "N";
         this.lastNames = "N";
+        this.yearsOld = "N";
         this.gender = 'N';
         this.id = "N";
         this.group = "N";
+        this.registrationNumber = "N";
     }
 
     public String getNames() {
@@ -82,4 +89,12 @@ public class StudentDTO
     public String toString() {
         return "Student: " + "names=" + names + ", lastNames=" + lastNames + ", gender=" + gender + ", id=" + id + ", group=" + group;
     }    
+
+    public String getYearsOld() {
+        return yearsOld;
+    }
+
+    public void setYearsOld(String yearsOld) {
+        this.yearsOld = yearsOld;
+    }
 }
