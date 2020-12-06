@@ -14,15 +14,18 @@ public class StudentController {
         if(!(h.isNumeric(student.getId()) && h.isNumeric(student.getGroup()))){
             return false;
         }
-        if(student.getNames().length()<3 || student.getLastNames().length()<3){
-            return false;
-        }
         if(h.isNumeric(student.getYearsOld())){
             if(Integer.parseInt(student.getYearsOld())>13){
                return false;
             }
         }
         else{
+            return false;
+        }        
+        if(student.getGroup().equals("N")){
+            return false;
+        }
+        if(student.getNames().length()<3 || student.getLastNames().length()<3){
             return false;
         }
         

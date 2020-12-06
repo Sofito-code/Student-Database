@@ -13,9 +13,7 @@ public class StudentDeal {
     StudentDAO studentList = new StudentList();
 	
     public boolean store(StudentDTO student){
-        if(student.getGroup().equals("N")){
-            return false;
-        }
+        
         boolean answer2 = studentList.store(student);
         boolean answer1 = studentDAO.store(student);
         return answer1==answer2;
