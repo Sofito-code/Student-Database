@@ -8,15 +8,22 @@ import co.edu.udea.tecnicas.dao.StudentDAO;
 
 public class StudentList implements StudentDAO 
 {
-    public static final List<StudentDTO> studentBD = new ArrayList<StudentDTO>();
+    private List<StudentDTO> list = new ArrayList<>();;
 
+    /**
+     * Create
+     * @param student
+     * @return 
+     */
+    @Override
     public boolean store(StudentDTO student) {
-        return studentBD.add(student);
+        
+        return list.add(student);
     }
 
     @Override
-    public StudentDTO consult(String id) {
-        for (StudentDTO student : studentBD) {
+    public StudentDTO read(String id) {
+        for (StudentDTO student : list) {
             if (student.getId().equals(id))
                 return student;
         }
@@ -25,18 +32,18 @@ public class StudentList implements StudentDAO
 
     @Override
     public List<StudentDTO> listing() {
-        List<StudentDTO> estudiantes = new ArrayList<StudentDTO>();
-        for (StudentDTO estudiante : studentBD) {
-                estudiantes.add(estudiante);
-        }
-        return estudiantes;
+        List<StudentDTO> students = new ArrayList<>();
+        list.forEach((StudentDTO student) -> {
+            students.add(student);
+        });
+        return students;
     }
 
     @Override
     public boolean delete(String identificacion) {
-        for (StudentDTO estudiante : studentBD) {
-            if (estudiante.getId().equals(identificacion)) {
-                studentBD.remove(estudiante);
+        for (StudentDTO student : list) {
+            if (student.getId().equals(identificacion)) {
+                list.remove(student);
                 return true;
             }
         }
@@ -44,14 +51,21 @@ public class StudentList implements StudentDAO
     }
 
     @Override
-    public boolean update(StudentDTO parametro) {
-        for (StudentDTO estudiante : studentBD) {
-            if (estudiante.getId().equals(parametro.getId())){
-                studentBD.remove(estudiante);
-                studentBD.add(parametro);
+    public boolean update(StudentDTO data) {
+        for (StudentDTO estudiante : list) {
+            if (estudiante.getId().equals(data.getId())){
+                list.remove(estudiante);
+                list.add(data);
                 return true;
             }
         }
         return false;
     }
+
+
+    @Override
+    public void setList(List<StudentDTO> list) {
+        this.list = list;
+    }
+
 }
