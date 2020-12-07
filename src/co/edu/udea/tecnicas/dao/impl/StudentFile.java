@@ -10,28 +10,32 @@ import java.util.Scanner;
 import co.edu.udea.tecnicas.model.StudentDTO;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 public class StudentFile
 {
-    private static final String DELIMITADOR_ARCHIVO = "-";    
+    private static final String DELIMITADOR_ARCHIVO = ",";    
     private static String FILE_NAME = "";
     private BufferedWriter escritorBuffer;
     private FileWriter escritorArchivo;
     private File archivoEstudiantes;
-
+    private Scanner lector;
     
     public StudentFile(String fileName) { 
         FILE_NAME = fileName;
-        Scanner lector;
+        
         try {
             archivoEstudiantes = new File(FILE_NAME+".txt");
             if (!archivoEstudiantes.exists()) archivoEstudiantes.createNewFile();
-            lector = new Scanner(archivoEstudiantes);                
+            lector = new Scanner(archivoEstudiantes); 
+            escritorArchivo = new FileWriter(archivoEstudiantes, true);
+            escritorBuffer = new BufferedWriter(escritorArchivo);
         } 
         catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
     
     public boolean store(StudentDTO estudiante) {
         StringBuilder sb = new StringBuilder();
@@ -42,17 +46,15 @@ public class StudentFile
         sb.append(DELIMITADOR_ARCHIVO);
         sb.append(estudiante.getLastNames());
         sb.append(DELIMITADOR_ARCHIVO);
-        sb.append(estudiante.getId());
+        sb.append(estudiante.getYearsOld());
         sb.append(DELIMITADOR_ARCHIVO);
         sb.append(estudiante.getGender());
         sb.append(DELIMITADOR_ARCHIVO);
+        sb.append(estudiante.getId());
+        sb.append(DELIMITADOR_ARCHIVO);        
         sb.append(estudiante.getGroup());
-        sb.append(DELIMITADOR_ARCHIVO);
-        try {
-            escritorArchivo = new FileWriter(archivoEstudiantes, true);
-            escritorBuffer = new BufferedWriter(escritorArchivo);		
+        try {            
             escritorBuffer.write(sb.toString());
-            escritorBuffer.write("\n");
             escritorBuffer.newLine();
             escritorBuffer.close();
             escritorArchivo.close();
@@ -64,33 +66,35 @@ public class StudentFile
         return false;
     }
 
-//    public StudentDTO consult(String id){
-//        
-//    }
-
-    public List<StudentDTO> listing() {
-        
-            return null;
-    }
-
-    public boolean delete(String identificacion) {
+    public boolean delete() {
             archivoEstudiantes.delete();
+        try {
+          archivoEstudiantes.createNewFile();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
             return false;
     }
 
-    public boolean update(StudentDTO estudiante)throws IOException{
-        archivoEstudiantes.delete();
+    public boolean update(List<StudentDTO> list)throws IOException{
+        delete();
+        list.forEach((StudentDTO student) -> {
+            store(student);
+        });
         return true;
         
     }
     
-    public boolean read(File grouoFile) throws IOException{
+    
+    public List read() throws IOException{
         Scanner s = null;
+        List<StudentDTO> list = new ArrayList<>();
         try {
-            s = new Scanner(new BufferedReader(new FileReader(grouoFile)));
-            while (s.hasNext()) {
-                System.out.println(s.next());
-                
+            s = new Scanner(new BufferedReader(new FileReader(this.archivoEstudiantes)));
+            while (s.hasNextLine()) {
+                String[] data = s.nextLine().split(",");                
+                StudentDTO oldStudent = new StudentDTO(data[1], data[2], data[3], data[4].charAt(0), data[5], data[6]);
+                list.add(oldStudent);                
             }
         }
         catch(IOException e){
@@ -101,6 +105,7 @@ public class StudentFile
                 s.close();
             }
         }        
-        return false;
+        return list;
     }
+
 }

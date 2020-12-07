@@ -87,8 +87,17 @@ public class StudentDTO
 
     @Override
     public String toString() {
-        return "Student: " + "names=" + names + ", lastNames=" + lastNames + ", gender=" + gender + ", id=" + id + ", group=" + group;
-    }    
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nombres:").append(names);
+        sb.append(" - Apellidos:").append(lastNames);
+        sb.append(" - Años:").append(yearsOld);
+        sb.append(" - Genero:").append(gender);
+        sb.append(" - Identificacion:").append(id);
+        sb.append(" - Grupo:").append(group);
+        sb.append(" - Matricula:").append(registrationNumber);
+        return sb.toString();
+    }
+   
 
     public String getYearsOld() {
         return yearsOld;

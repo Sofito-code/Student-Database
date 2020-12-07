@@ -8,11 +8,7 @@ import co.edu.udea.tecnicas.dao.StudentDAO;
 
 public class StudentList implements StudentDAO 
 {
-    private List<StudentDTO> list;
-
-    public StudentList() {
-        list = new ArrayList<>();
-    }   
+    private List<StudentDTO> list = new ArrayList<>();;
 
     /**
      * Create
@@ -64,6 +60,16 @@ public class StudentList implements StudentDAO
             }
         }
         return false;
+    }
+
+    @Override
+    public List<StudentDTO> getList() {
+        return list;
+    }
+
+    @Override
+    public void setList(List<StudentDTO> list) {
+        this.list = list;
     }
 
 }

@@ -5,7 +5,8 @@ import javax.swing.JOptionPane;
 
 
 public class StudentDeal {
-    public boolean store(StudentDTO student) {       
+    public boolean store(StudentDTO student) {
+        
         boolean pass = true;
         if(student.getNames().length()<3){
             JOptionPane.showMessageDialog(null, "Los nombres deben ser de 3 letras o más");
@@ -52,11 +53,7 @@ public class StudentDeal {
         else{            
             return true;
         }        
-    }
-    public static void main(String[] args) {
-        StudentDeal a = new StudentDeal();
-        a.delete("1000");
-    }
+    }    
     
     public boolean delete(String identificacion) {
         boolean answer1 = read(identificacion);
