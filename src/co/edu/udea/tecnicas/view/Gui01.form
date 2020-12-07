@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="focusable" type="boolean" value="false"/>
@@ -339,10 +343,9 @@
             <Component class="javax.swing.JComboBox" name="genderCB">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value=" "/>
+                  <StringArray count="2">
+                    <StringItem index="0" value="H"/>
                     <StringItem index="1" value="M"/>
-                    <StringItem index="2" value="F"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -358,14 +361,12 @@
             <Component class="javax.swing.JComboBox" name="groupCB">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="7">
-                    <StringItem index="0" value=" "/>
-                    <StringItem index="1" value="Primero"/>
-                    <StringItem index="2" value="Segundo"/>
-                    <StringItem index="3" value="Tercero"/>
-                    <StringItem index="4" value="Cuarto"/>
-                    <StringItem index="5" value="Quinto"/>
-                    <StringItem index="6" value=" "/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="Primero"/>
+                    <StringItem index="1" value="Segundo"/>
+                    <StringItem index="2" value="Tercero"/>
+                    <StringItem index="3" value="Cuarto"/>
+                    <StringItem index="4" value="Quinto"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -500,10 +501,9 @@
             <Component class="javax.swing.JComboBox" name="searchOptionCB">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
+                  <StringArray count="2">
                     <StringItem index="0" value="Todos"/>
                     <StringItem index="1" value="Identificacion"/>
-                    <StringItem index="2" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -664,12 +664,9 @@
                                                   </Group>
                                               </Group>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                                      <EmptySpace pref="89" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
@@ -682,7 +679,6 @@
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="idUpdateTF" max="32767" attributes="0"/>
                                   <Component id="genderUpdateCB" max="32767" attributes="0"/>

@@ -32,6 +32,7 @@ public class Gui01 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         MainPanel = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -213,7 +214,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        genderCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "M", "F" }));
+        genderCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "H", "M" }));
 
         idTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -221,7 +222,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        groupCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", " " }));
+        groupCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primero", "Segundo", "Tercero", "Cuarto", "Quinto" }));
 
         backMenu0BT.setText("Volver al Menu");
         backMenu0BT.addActionListener(new java.awt.event.ActionListener() {
@@ -334,7 +335,7 @@ public class Gui01 extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Buscar por:");
 
-        searchOptionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Identificacion", " " }));
+        searchOptionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Identificacion" }));
 
         searchBT.setText("Buscar");
         searchBT.addActionListener(new java.awt.event.ActionListener() {
@@ -573,10 +574,8 @@ public class Gui01 extends javax.swing.JFrame {
                                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(ageUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lastNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addGap(143, 143, 143)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                    .addComponent(jLabel18))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel20)
                                     .addComponent(jLabel19)
@@ -585,7 +584,6 @@ public class Gui01 extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(deleteStudentBT)
                                 .addGap(29, 29, 29)))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(idUpdateTF)
                             .addComponent(genderUpdateCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -921,6 +919,7 @@ public class Gui01 extends javax.swing.JFrame {
     private javax.swing.JButton backMenu0BT;
     private javax.swing.JButton backMenu1BT;
     private javax.swing.JButton backMenu2BT;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton deleteStudentBT;
     private javax.swing.JButton exitBT;
     private javax.swing.JTextField firstNamesTF;
