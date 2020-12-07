@@ -35,10 +35,10 @@ public class Gui01 extends javax.swing.JFrame {
         MainPanel = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        registerStudent = new javax.swing.JButton();
-        searchStudent = new javax.swing.JButton();
-        updateStudent = new javax.swing.JButton();
-        exit = new javax.swing.JButton();
+        registerStudentBT = new javax.swing.JButton();
+        searchStudentBt = new javax.swing.JButton();
+        updateDeleteStudentBT = new javax.swing.JButton();
+        exitBT = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -52,8 +52,8 @@ public class Gui01 extends javax.swing.JFrame {
         genderCB = new javax.swing.JComboBox<>();
         idTF = new javax.swing.JTextField();
         groupCB = new javax.swing.JComboBox<>();
-        backMenu0 = new javax.swing.JButton();
-        matricular = new javax.swing.JButton();
+        backMenu0BT = new javax.swing.JButton();
+        registerBT = new javax.swing.JButton();
         ageTF = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         firstNamesTF = new javax.swing.JTextField();
@@ -64,11 +64,30 @@ public class Gui01 extends javax.swing.JFrame {
         searchBT = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentsTable = new javax.swing.JTable();
-        backMenu1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        backMenu1BT = new javax.swing.JButton();
+        infoBT = new javax.swing.JButton();
         idSeacrhTF = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        backMenu2 = new javax.swing.JButton();
+        backMenu2BT = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        idSearchUpdateTF = new javax.swing.JTextField();
+        updateSearchBT = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        firstNamesUpdateTF = new javax.swing.JTextField();
+        lastNamesUpdateTF = new javax.swing.JTextField();
+        ageUpdateTF = new javax.swing.JTextField();
+        idUpdateTF = new javax.swing.JTextField();
+        updateStudentBT = new javax.swing.JButton();
+        genderUpdateCB = new javax.swing.JComboBox<>();
+        groupUpdateCB = new javax.swing.JComboBox<>();
+        deleteStudentBT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -83,31 +102,31 @@ public class Gui01 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Matricula Estudiantil");
 
-        registerStudent.setText("Matricular Estudiante");
-        registerStudent.addActionListener(new java.awt.event.ActionListener() {
+        registerStudentBT.setText("Matricular Estudiante");
+        registerStudentBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerStudentActionPerformed(evt);
+                registerStudentBTActionPerformed(evt);
             }
         });
 
-        searchStudent.setText("Buscar Estudiante");
-        searchStudent.addActionListener(new java.awt.event.ActionListener() {
+        searchStudentBt.setText("Buscar Estudiante");
+        searchStudentBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchStudentActionPerformed(evt);
+                searchStudentBtActionPerformed(evt);
             }
         });
 
-        updateStudent.setText("Actualizar/borrar estudiante");
-        updateStudent.addActionListener(new java.awt.event.ActionListener() {
+        updateDeleteStudentBT.setText("Actualizar/borrar estudiante");
+        updateDeleteStudentBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateStudentActionPerformed(evt);
+                updateDeleteStudentBTActionPerformed(evt);
             }
         });
 
-        exit.setText("Salir");
-        exit.addActionListener(new java.awt.event.ActionListener() {
+        exitBT.setText("Salir");
+        exitBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
+                exitBTActionPerformed(evt);
             }
         });
 
@@ -135,15 +154,15 @@ public class Gui01 extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGap(183, 183, 183))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(exit)
+                                .addComponent(exitBT)
                                 .addGap(232, 232, 232))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(updateStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(searchStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(updateDeleteStudentBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(searchStudentBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(179, 179, 179))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(registerStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(registerStudentBT, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -156,13 +175,13 @@ public class Gui01 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(registerStudent)
+                .addComponent(registerStudentBT)
                 .addGap(18, 18, 18)
-                .addComponent(searchStudent)
+                .addComponent(searchStudentBt)
                 .addGap(18, 18, 18)
-                .addComponent(updateStudent)
+                .addComponent(updateDeleteStudentBT)
                 .addGap(39, 39, 39)
-                .addComponent(exit)
+                .addComponent(exitBT)
                 .addContainerGap())
         );
 
@@ -194,7 +213,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        genderCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        genderCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "M", "F" }));
 
         idTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -202,19 +221,19 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        groupCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", " " }));
+        groupCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", " " }));
 
-        backMenu0.setText("Volver al Menu");
-        backMenu0.addActionListener(new java.awt.event.ActionListener() {
+        backMenu0BT.setText("Volver al Menu");
+        backMenu0BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backMenu0ActionPerformed(evt);
+                backMenu0BTActionPerformed(evt);
             }
         });
 
-        matricular.setText("Matricular");
-        matricular.addActionListener(new java.awt.event.ActionListener() {
+        registerBT.setText("Matricular");
+        registerBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                matricularActionPerformed(evt);
+                registerBTActionPerformed(evt);
             }
         });
 
@@ -238,9 +257,9 @@ public class Gui01 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(backMenu0)
+                .addComponent(backMenu0BT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
-                .addComponent(matricular, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerBT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
@@ -302,8 +321,8 @@ public class Gui01 extends javax.swing.JFrame {
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backMenu0)
-                    .addComponent(matricular))
+                    .addComponent(backMenu0BT)
+                    .addComponent(registerBT))
                 .addContainerGap())
         );
 
@@ -312,6 +331,7 @@ public class Gui01 extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("Buscar estudiante");
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Buscar por:");
 
         searchOptionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Identificacion", " " }));
@@ -357,17 +377,17 @@ public class Gui01 extends javax.swing.JFrame {
             studentsTable.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        backMenu1.setText("Volver al menu");
-        backMenu1.addActionListener(new java.awt.event.ActionListener() {
+        backMenu1BT.setText("Volver al menu");
+        backMenu1BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backMenu1ActionPerformed(evt);
+                backMenu1BTActionPerformed(evt);
             }
         });
 
-        jButton4.setText("?");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        infoBT.setText("?");
+        infoBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                infoBTActionPerformed(evt);
             }
         });
 
@@ -392,7 +412,7 @@ public class Gui01 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4)
+                        .addComponent(infoBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(searchBT, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))))
@@ -404,7 +424,7 @@ public class Gui01 extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(195, 195, 195)
-                        .addComponent(backMenu1))
+                        .addComponent(backMenu1BT))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(idSeacrhTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -420,22 +440,97 @@ public class Gui01 extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBT)
-                    .addComponent(jButton4))
+                    .addComponent(infoBT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(idSeacrhTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(backMenu1)
+                .addComponent(backMenu1BT)
                 .addContainerGap())
         );
 
         MainPanel.addTab("Buscar", jPanel5);
 
-        backMenu2.setText("Volver al menú");
-        backMenu2.addActionListener(new java.awt.event.ActionListener() {
+        backMenu2BT.setText("Volver al menú");
+        backMenu2BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backMenu2ActionPerformed(evt);
+                backMenu2BTActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setText("Actualizar estudiante");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setText("Ingrese el numero de identificacion del estudiante: ");
+
+        idSearchUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                idSearchUpdateTFKeyTyped(evt);
+            }
+        });
+
+        updateSearchBT.setText("Buscar");
+        updateSearchBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSearchBTActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Inforcacion del estudiante");
+
+        jLabel16.setText("Nombres");
+
+        jLabel17.setText("Apellidos");
+
+        jLabel18.setText("Edad");
+
+        jLabel19.setText("Identificacion");
+
+        jLabel20.setText("Genero");
+
+        jLabel21.setText("Grupo");
+
+        firstNamesUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                firstNamesUpdateTFKeyTyped(evt);
+            }
+        });
+
+        lastNamesUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lastNamesUpdateTFKeyTyped(evt);
+            }
+        });
+
+        ageUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ageUpdateTFKeyTyped(evt);
+            }
+        });
+
+        idUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                idUpdateTFKeyTyped(evt);
+            }
+        });
+
+        updateStudentBT.setText("Realizar cambios");
+        updateStudentBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateStudentBTActionPerformed(evt);
+            }
+        });
+
+        genderUpdateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "M", "F" }));
+
+        groupUpdateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto" }));
+
+        deleteStudentBT.setText("Borrar");
+        deleteStudentBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStudentBTActionPerformed(evt);
             }
         });
 
@@ -444,16 +539,107 @@ public class Gui01 extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(backMenu2)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(idSearchUpdateTF)
+                        .addGap(34, 34, 34)
+                        .addComponent(updateSearchBT))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(backMenu2BT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(updateStudentBT))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                            .addComponent(jLabel16)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(firstNamesUpdateTF))
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                            .addComponent(jLabel17)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(ageUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lastNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel18)
+                                        .addGap(143, 143, 143)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel21)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(deleteStudentBT)
+                                .addGap(29, 29, 29)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(idUpdateTF)
+                            .addComponent(genderUpdateCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(groupUpdateCB, 0, 115, Short.MAX_VALUE))))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(291, Short.MAX_VALUE)
-                .addComponent(backMenu2)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(idSearchUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateSearchBT))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(idUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(genderUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(groupUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(firstNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(lastNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(ageUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backMenu2BT)
+                    .addComponent(updateStudentBT)
+                    .addComponent(deleteStudentBT))
+                .addGap(20, 20, 20))
         );
 
         MainPanel.addTab("Actualizar / Borrar", jPanel3);
@@ -473,34 +659,34 @@ public class Gui01 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Navegacion Menu
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+    private void exitBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTActionPerformed
         this.dispose();
-    }//GEN-LAST:event_exitActionPerformed
+    }//GEN-LAST:event_exitBTActionPerformed
 
-    private void updateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStudentActionPerformed
+    private void updateDeleteStudentBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateDeleteStudentBTActionPerformed
         MainPanel.setSelectedIndex(3);
-    }//GEN-LAST:event_updateStudentActionPerformed
+    }//GEN-LAST:event_updateDeleteStudentBTActionPerformed
 
-    private void searchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStudentActionPerformed
+    private void searchStudentBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStudentBtActionPerformed
         MainPanel.setSelectedIndex(2);
-    }//GEN-LAST:event_searchStudentActionPerformed
+    }//GEN-LAST:event_searchStudentBtActionPerformed
 
-    private void registerStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerStudentActionPerformed
+    private void registerStudentBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerStudentBTActionPerformed
         MainPanel.setSelectedIndex(1);
-    }//GEN-LAST:event_registerStudentActionPerformed
+    }//GEN-LAST:event_registerStudentBTActionPerformed
 
     //Botones para volver al menu
-    private void backMenu0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMenu0ActionPerformed
+    private void backMenu0BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMenu0BTActionPerformed
         MainPanel.setSelectedIndex(0);
-    }//GEN-LAST:event_backMenu0ActionPerformed
+    }//GEN-LAST:event_backMenu0BTActionPerformed
 
-    private void backMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMenu1ActionPerformed
+    private void backMenu1BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMenu1BTActionPerformed
         MainPanel.setSelectedIndex(0);
-    }//GEN-LAST:event_backMenu1ActionPerformed
+    }//GEN-LAST:event_backMenu1BTActionPerformed
 
-    private void backMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMenu2ActionPerformed
+    private void backMenu2BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMenu2BTActionPerformed
         MainPanel.setSelectedIndex(0);
-    }//GEN-LAST:event_backMenu2ActionPerformed
+    }//GEN-LAST:event_backMenu2BTActionPerformed
 
     //Restricciones de campos de texto "Matricular"
     private void firstNamesTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNamesTFKeyTyped
@@ -528,10 +714,10 @@ public class Gui01 extends javax.swing.JFrame {
     }//GEN-LAST:event_idTFKeyTyped
     
     //Boton matricular
-    private void matricularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matricularActionPerformed
+    private void registerBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBTActionPerformed
         //Se comprueba que todos los campos no esten vacion, si se da el caso se informa al usuario
-        if((firstNamesTF.getText().replace(" ", "").equals("") ) && (lastNamesTF.getText().replace(" ", "").equals("") ) && (ageTF.getText().replace(" ", "").equals("") ) && (idTF.getText().replace(" ", "").equals("") )){
-            JOptionPane.showMessageDialog(null, "Todos los campos debes ser llenado");
+        if((firstNamesTF.getText().replace(" ", "").equals("") ) || (lastNamesTF.getText().replace(" ", "").equals("") ) || (ageTF.getText().replace(" ", "").equals("") ) || (idTF.getText().replace(" ", "").equals("")) || (String.valueOf(genderCB.getSelectedItem()).equals(" "))|| (String.valueOf(groupCB.getSelectedItem()).equals(" ")) ){
+            JOptionPane.showMessageDialog(null, "Todos los campos debes ser llenados");
         }
         //Si todos los campos estan llenos, Se continua con el proceso
         else{
@@ -541,20 +727,31 @@ public class Gui01 extends javax.swing.JFrame {
             String id = idTF.getText();
             String group = String.valueOf(groupCB.getSelectedItem());
             String gender = String.valueOf(genderCB.getSelectedItem());
+            //Asignar datos ingresados a un estudiante
+           
+            //Se limpian los campos de texto
+            firstNamesTF.setText("");
+            lastNamesTF.setText("");
+            ageTF.setText("");
+            idTF.setText("");
+            genderCB.setSelectedIndex(0);
+            groupCB.setSelectedIndex(0);
             
+            //se informa que la operacion ha sido exitosa
+            JOptionPane.showMessageDialog(null, "Se ha matricula con exito al estudiante");
         }
-    }//GEN-LAST:event_matricularActionPerformed
+    }//GEN-LAST:event_registerBTActionPerformed
 
     //boton de informacion para el usuario a la hora de buscar
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void infoBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoBTActionPerformed
         JOptionPane.showMessageDialog(null, "Si desea Ver el listado de todos los estudiante seleccione"
                                             + " \"Todos\" y oprima el boton buscar.\n"
                                             + "Si lo que desea es buscar a un estudiante en especifico\n"
                                             + "seleccione \"Identificacion\", ingrese el numero de identificacion"
                                             + " y oprima el boton buscar.  ");
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_infoBTActionPerformed
 
-    //Restricciones para el campo de texto en la pestaña buscar
+    //Restricciones para el campo de texto en la pestaña "Buscar"
     private void idSeacrhTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idSeacrhTFKeyTyped
         if(String.valueOf(searchOptionCB.getSelectedItem()).equals("Todos")){
             evt.consume();
@@ -563,7 +760,8 @@ public class Gui01 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_idSeacrhTFKeyTyped
-    //Boton "buscar" 
+    
+    //Boton "Buscar" pestaña "Buscar"
     private void searchBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTActionPerformed
         if(String.valueOf(searchOptionCB.getSelectedItem()).equals("Todos")){
             //mostrar todos los estudiantes en la tabla
@@ -575,9 +773,110 @@ public class Gui01 extends javax.swing.JFrame {
             }
             else{
                 //mostrar estudiante con la identificacion Ingresada 
+                
+                //se limpia el campo de texto
+                idSeacrhTF.setText("");
             }
         }
     }//GEN-LAST:event_searchBTActionPerformed
+    
+    //Restricciones para los campos de texto de "Actualizar estudiante"
+    private void idSearchUpdateTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idSearchUpdateTFKeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_idSearchUpdateTFKeyTyped
+
+    private void firstNamesUpdateTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNamesUpdateTFKeyTyped
+        if(!Character.isLetter(evt.getKeyChar()) & !(evt.getKeyChar()==KeyEvent.VK_SPACE) & !(evt.getKeyChar()==KeyEvent.VK_BACK_SPACE)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_firstNamesUpdateTFKeyTyped
+
+    private void lastNamesUpdateTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lastNamesUpdateTFKeyTyped
+        if(!Character.isLetter(evt.getKeyChar()) & !(evt.getKeyChar()==KeyEvent.VK_SPACE) & !(evt.getKeyChar()==KeyEvent.VK_BACK_SPACE)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_lastNamesUpdateTFKeyTyped
+
+    private void ageUpdateTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageUpdateTFKeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_ageUpdateTFKeyTyped
+
+    private void idUpdateTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idUpdateTFKeyTyped
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_idUpdateTFKeyTyped
+
+    //Boton "Buscar" en la pestaña "Actualizar/Borrar"
+    private void updateSearchBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchBTActionPerformed
+        if(idSearchUpdateTF.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Debe ingresar un documento para poder buscar");
+        }
+        else{
+            //Buscar estudiante y asignar informacion a variables
+            String currentNames = "Current Names";
+            String currentLastNames = "Current Last Names";
+            String currentAge = "Current Age";
+            String currentId = "Current Id";
+            
+            //Se muestra la informacion que se tiene del estudiante
+            firstNamesUpdateTF.setText(currentNames);
+            lastNamesUpdateTF.setText(currentLastNames);
+            ageUpdateTF.setText(currentAge);
+            idUpdateTF.setText(currentId);
+            genderUpdateCB.setSelectedIndex(0);
+            groupUpdateCB.setSelectedIndex(0);
+        }
+        
+        
+        
+    }//GEN-LAST:event_updateSearchBTActionPerformed
+    
+    //Boton "Borrar" pestaña "Actualizar/Borrar"
+    private void deleteStudentBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBTActionPerformed
+        if(idSearchUpdateTF.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Debes ingresar un numero de identificacion para borrar a un estudiante");
+        }
+        else{
+            String idStudentDeleted = idSearchUpdateTF.getText();
+            //Borrar estudiante con la id ingresada
+            
+            //se informa de que qla operacion se ha realizado
+            JOptionPane.showMessageDialog(null, "Se ha borrado con exito al estudiante");
+        }
+    }//GEN-LAST:event_deleteStudentBTActionPerformed
+
+    //Boton "Realizar Cambios" pestaña "Actualizar/Borrar"
+    private void updateStudentBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStudentBTActionPerformed
+        if((firstNamesUpdateTF.getText().replace(" ", "").equals("") ) || (lastNamesUpdateTF.getText().replace(" ", "").equals("") ) || (ageUpdateTF.getText().equals("") ) || (idUpdateTF.getText().equals("")) || (String.valueOf(genderUpdateCB.getSelectedItem()).equals(" "))|| (String.valueOf(groupUpdateCB.getSelectedItem()).equals(" ")) ){
+            JOptionPane.showMessageDialog(null, "Todos los campos debes ser llenados");
+        }
+        else{
+            // se obtien la informacion actualizada del estudiante
+            String newFirstNames = firstNamesUpdateTF.getText();
+            String newlastsNames =lastNamesUpdateTF.getText();
+            String newAge = ageUpdateTF.getText();
+            String newId = idUpdateTF.getText();
+            String newGender = String.valueOf(genderUpdateCB.getSelectedItem());
+            String newGroup = String.valueOf(groupUpdateCB.getSelectedItem());
+            
+            //Actualizar estudiante con los datos ingresados
+            
+            //Se limpian los campos de texto
+            idSearchUpdateTF.setText("");
+            firstNamesUpdateTF.setText("");
+            lastNamesUpdateTF.setText("");
+            ageUpdateTF.setText("");
+            idUpdateTF.setText("");
+            
+            //Se infroma que la operacion se han realizado 
+            JOptionPane.showMessageDialog(null,"Se han actualizado con exito los datos");
+        }
+    }//GEN-LAST:event_updateStudentBTActionPerformed
 
     
     /**
@@ -618,21 +917,37 @@ public class Gui01 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane MainPanel;
     private javax.swing.JTextField ageTF;
-    private javax.swing.JButton backMenu0;
-    private javax.swing.JButton backMenu1;
-    private javax.swing.JButton backMenu2;
-    private javax.swing.JButton exit;
+    private javax.swing.JTextField ageUpdateTF;
+    private javax.swing.JButton backMenu0BT;
+    private javax.swing.JButton backMenu1BT;
+    private javax.swing.JButton backMenu2BT;
+    private javax.swing.JButton deleteStudentBT;
+    private javax.swing.JButton exitBT;
     private javax.swing.JTextField firstNamesTF;
+    private javax.swing.JTextField firstNamesUpdateTF;
     private javax.swing.JComboBox<String> genderCB;
+    private javax.swing.JComboBox<String> genderUpdateCB;
     private javax.swing.JComboBox<String> groupCB;
+    private javax.swing.JComboBox<String> groupUpdateCB;
     private javax.swing.JTextField idSeacrhTF;
+    private javax.swing.JTextField idSearchUpdateTF;
     private javax.swing.JTextField idTF;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField idUpdateTF;
+    private javax.swing.JButton infoBT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -646,12 +961,15 @@ public class Gui01 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lastNamesTF;
-    private javax.swing.JButton matricular;
-    private javax.swing.JButton registerStudent;
+    private javax.swing.JTextField lastNamesUpdateTF;
+    private javax.swing.JButton registerBT;
+    private javax.swing.JButton registerStudentBT;
     private javax.swing.JButton searchBT;
     private javax.swing.JComboBox<String> searchOptionCB;
-    private javax.swing.JButton searchStudent;
+    private javax.swing.JButton searchStudentBt;
     private javax.swing.JTable studentsTable;
-    private javax.swing.JButton updateStudent;
+    private javax.swing.JButton updateDeleteStudentBT;
+    private javax.swing.JButton updateSearchBT;
+    private javax.swing.JButton updateStudentBT;
     // End of variables declaration//GEN-END:variables
 }
