@@ -27,15 +27,6 @@ public class StudentController {
     StudentDAO allStudents = new StudentList();
     StudentDeal deal = new StudentDeal();
     
-   
-    public static void main(String[] args) throws IOException {
-        StudentController a = new StudentController();
-        a.readAllGroups();
-       StudentDTO t = new StudentDTO("thomi", "test", "9", 'h', "1035", "3");
-        a.delete(t.getId(),true);
-        a.allStudents.listing().forEach(student -> System.out.println(student));
-        
-    }
     public boolean store(StudentDTO student) throws IOException{
         StudentDTO studentRequest = allStudents.read(student.getId());
         if(studentRequest == null){
@@ -103,6 +94,7 @@ public class StudentController {
     }
     /**
      * index
+     * @param studentList
      * @return 
      */
     public List<StudentDTO> listing(StudentDAO studentList){
@@ -305,12 +297,22 @@ public class StudentController {
                 return false;
             } 
         }
-        JOptionPane.showMessageDialog(null, "El estuidante no fue eliminado");
+        else{
+            JOptionPane.showMessageDialog(null, "El estudiante no existe");
+            return false;
+        }
+        JOptionPane.showMessageDialog(null, "El estudiante no fue eliminado");
         return false;
     }
    
     public StudentDTO search(String id) throws IOException {
-        return allStudents.read(id);
+        if(allStudents.read(id)== null){
+            JOptionPane.showMessageDialog(null, "El estudiante no existe");
+            return null;
+        }
+        else{
+            return allStudents.read(id);
+        }        
     }
     
     public StudentDAO getFirst() {
