@@ -8,10 +8,10 @@ import co.edu.udea.tecnicas.dao.StudentDAO;
 
 public class StudentList implements StudentDAO 
 {
-    public final List<StudentDTO> studentBD;
+    private List<StudentDTO> list;
 
     public StudentList() {
-        studentBD = new ArrayList<StudentDTO>();
+        list = new ArrayList<>();
     }   
 
     /**
@@ -22,12 +22,12 @@ public class StudentList implements StudentDAO
     @Override
     public boolean store(StudentDTO student) {
         
-        return studentBD.add(student);
+        return list.add(student);
     }
 
     @Override
-    public StudentDTO consult(String id) {
-        for (StudentDTO student : studentBD) {
+    public StudentDTO read(String id) {
+        for (StudentDTO student : list) {
             if (student.getId().equals(id))
                 return student;
         }
@@ -36,18 +36,18 @@ public class StudentList implements StudentDAO
 
     @Override
     public List<StudentDTO> listing() {
-        List<StudentDTO> students = new ArrayList<StudentDTO>();
-        for (StudentDTO student : studentBD) {
-                students.add(student);
-        }
+        List<StudentDTO> students = new ArrayList<>();
+        list.forEach((StudentDTO student) -> {
+            students.add(student);
+        });
         return students;
     }
 
     @Override
     public boolean delete(String identificacion) {
-        for (StudentDTO student : studentBD) {
+        for (StudentDTO student : list) {
             if (student.getId().equals(identificacion)) {
-                studentBD.remove(student);
+                list.remove(student);
                 return true;
             }
         }
@@ -56,13 +56,14 @@ public class StudentList implements StudentDAO
 
     @Override
     public boolean update(StudentDTO data) {
-        for (StudentDTO estudiante : studentBD) {
+        for (StudentDTO estudiante : list) {
             if (estudiante.getId().equals(data.getId())){
-                studentBD.remove(estudiante);
-                studentBD.add(data);
+                list.remove(estudiante);
+                list.add(data);
                 return true;
             }
         }
         return false;
     }
+
 }

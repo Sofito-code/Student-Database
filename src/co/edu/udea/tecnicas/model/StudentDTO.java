@@ -13,14 +13,14 @@ public class StudentDTO
     private String group;
     private String registrationNumber;
 
-    public StudentDTO(String names, String lastNames, String yearsOld, char gender, String id, String group, String registrationNumber) {
+    public StudentDTO(String names, String lastNames, String yearsOld, char gender, String id, String group) {
         this.names = names;
         this.lastNames = lastNames;
         this.yearsOld = yearsOld;
         this.gender = gender;
         this.id = id;
         this.group = group;
-        this.registrationNumber = registrationNumber;
+        this.registrationNumber = Integer.toString(this.hashCode());
     }
 
     
