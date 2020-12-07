@@ -62,10 +62,6 @@ public class StudentList implements StudentDAO
         return false;
     }
 
-    @Override
-    public List<StudentDTO> getList() {
-        return list;
-    }
 
     @Override
     public void setList(List<StudentDTO> list) {

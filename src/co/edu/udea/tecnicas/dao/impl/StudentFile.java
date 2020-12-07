@@ -15,21 +15,19 @@ import java.util.ArrayList;
 public class StudentFile
 {
     private static final String DELIMITADOR_ARCHIVO = ",";    
-    private static String FILE_NAME = "";
-    private BufferedWriter escritorBuffer;
-    private FileWriter escritorArchivo;
-    private File archivoEstudiantes;
-    private Scanner lector;
+    private static String FILE_ROUTE = "";
+    private BufferedWriter buffWriter;
+    private FileWriter fileWriter;
+    private File studentFile;
+    private Scanner reader;
     
     public StudentFile(String fileName) { 
-        FILE_NAME = fileName;
-        
+        FILE_ROUTE = "reports/"+fileName+".txt";        
         try {
-            archivoEstudiantes = new File(FILE_NAME+".txt");
-            if (!archivoEstudiantes.exists()) archivoEstudiantes.createNewFile();
-            lector = new Scanner(archivoEstudiantes); 
-            escritorArchivo = new FileWriter(archivoEstudiantes, true);
-            escritorBuffer = new BufferedWriter(escritorArchivo);
+            studentFile = new File(FILE_ROUTE);
+            if (!studentFile.exists()) studentFile.createNewFile();
+            reader = new Scanner(studentFile);                       
+            reader.close();
         } 
         catch (IOException e) {
             e.printStackTrace();
@@ -54,10 +52,12 @@ public class StudentFile
         sb.append(DELIMITADOR_ARCHIVO);        
         sb.append(estudiante.getGroup());
         try {            
-            escritorBuffer.write(sb.toString());
-            escritorBuffer.newLine();
-            escritorBuffer.close();
-            escritorArchivo.close();
+            fileWriter = new FileWriter(studentFile, true);
+            buffWriter = new BufferedWriter(fileWriter);  
+            buffWriter.write(sb.toString());
+            buffWriter.newLine();
+            buffWriter.close();
+            fileWriter.close();
             
             return true;
         } catch (IOException e) {			
@@ -66,23 +66,30 @@ public class StudentFile
         return false;
     }
 
-    public boolean delete() {
-            archivoEstudiantes.delete();
-        try {
-          archivoEstudiantes.createNewFile();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-            return false;
+    public boolean delete() throws IOException {
+        if(studentFile.delete()){
+            try{
+                if (!studentFile.exists()) studentFile.createNewFile();
+                reader = new Scanner(studentFile);                       
+                reader.close();
+            }
+            catch(IOException e)            {
+                e.printStackTrace();
+            }
+            return true;
+        }        
+        return false;
+        
     }
 
     public boolean update(List<StudentDTO> list)throws IOException{
-        delete();
-        list.forEach((StudentDTO student) -> {
-            store(student);
-        });
-        return true;
-        
+        if(delete()){            
+                list.forEach((StudentDTO student) -> {
+                store(student);
+            });
+            return true;
+        }      
+        return false;
     }
     
     
@@ -90,7 +97,7 @@ public class StudentFile
         Scanner s = null;
         List<StudentDTO> list = new ArrayList<>();
         try {
-            s = new Scanner(new BufferedReader(new FileReader(this.archivoEstudiantes)));
+            s = new Scanner(new BufferedReader(new FileReader(this.studentFile)));
             while (s.hasNextLine()) {
                 String[] data = s.nextLine().split(",");                
                 StudentDTO oldStudent = new StudentDTO(data[1], data[2], data[3], data[4].charAt(0), data[5], data[6]);
@@ -107,5 +114,6 @@ public class StudentFile
         }        
         return list;
     }
+    
 
 }

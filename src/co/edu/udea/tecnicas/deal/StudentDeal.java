@@ -18,9 +18,15 @@ public class StudentDeal {
         }
         if(isNumeric(student.getYearsOld())){
             if(Integer.parseInt(student.getYearsOld())>13){
-            JOptionPane.showMessageDialog(null, "El estudiante supera la edad permitida");
+            JOptionPane.showMessageDialog(null, "El estudiante supera la edad permitida (13 años)");
             pass=false;
-            }            
+            }
+            else{
+                if(Integer.parseInt(student.getYearsOld())<=4){
+                    JOptionPane.showMessageDialog(null, "El estudiante esta por debajo de la edad permitida (5 años)");
+                    pass= false;
+                }                
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "Por favor ingrese una edad valida (numerica)");
@@ -29,7 +35,7 @@ public class StudentDeal {
         char men = 'h';
         char women = 'm';
         if(student.getGender()!=men && student.getGender()!= women){
-            JOptionPane.showMessageDialog(null, "El genero debe ser F o M");
+            JOptionPane.showMessageDialog(null, "El genero debe ser H o M");
             pass=false;
         }
         if(!isNumeric(student.getId())){
@@ -58,13 +64,9 @@ public class StudentDeal {
     public boolean delete(String identificacion) {
         boolean answer1 = read(identificacion);
         if(answer1){
-            int a = JOptionPane.showConfirmDialog(null, "¿seguro que desea eliminar este alumno o alumna?",
+            int a = JOptionPane.showConfirmDialog(null, "¿seguro que desea eliminar éste estudiente?",
                 "Confirmar", JOptionPane.OK_CANCEL_OPTION);
-            System.out.println(a);
-            if(a==0) return true;
-            else{
-                return false;
-            }            
+            return a==0;            
         }
         else{
             JOptionPane.showMessageDialog(null, "No se encontro el estudiante en la matricula.");

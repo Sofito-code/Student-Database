@@ -11,7 +11,6 @@ public interface StudentDAO
     public StudentDTO read(String id) throws IOException;
     public List<StudentDTO> listing();
     public boolean delete(String id);
-    public boolean update(StudentDTO student)throws IOException;
-    public List<StudentDTO> getList();
+    public boolean update(StudentDTO student)throws IOException;    
     public void setList(List<StudentDTO> list);
 }
