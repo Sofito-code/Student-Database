@@ -1,4 +1,7 @@
 package co.edu.udea.tecnicas.model;
+
+import java.util.Random;
+
 /**
  * DTO = DATA TRANSFER OBJECT = OBJETO DE TRANSFERENCIA DE DATOS
  * @author Sofia Vanegas
@@ -14,13 +17,14 @@ public class StudentDTO
     private String registrationNumber;
 
     public StudentDTO(String names, String lastNames, String yearsOld, char gender, String id, String group) {
+        Random r = new Random();
         this.names = names;
         this.lastNames = lastNames;
         this.yearsOld = yearsOld;
         this.gender = gender;
         this.id = id;
         this.group = group;
-        this.registrationNumber = Integer.toString(this.hashCode());
+        this.registrationNumber = Integer.toString(r.nextInt(1000));
     }
 
     

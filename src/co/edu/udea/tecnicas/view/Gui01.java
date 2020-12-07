@@ -5,9 +5,14 @@
  */
 package co.edu.udea.tecnicas.view;
 
+import co.edu.udea.tecnicas.controller.StudentController;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import co.edu.udea.tecnicas.model.StudentDTO;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,6 +26,7 @@ public class Gui01 extends javax.swing.JFrame {
      */
     public Gui01() {
         initComponents();
+        control.readAllGroups();
     }
 
     /**
@@ -96,6 +102,7 @@ public class Gui01 extends javax.swing.JFrame {
 
         MainPanel.setBackground(new java.awt.Color(200, 200, 200));
         MainPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        MainPanel.setToolTipText("");
         MainPanel.setEnabled(false);
         MainPanel.setFocusable(false);
         MainPanel.setVerifyInputWhenFocusTarget(false);
@@ -143,7 +150,7 @@ public class Gui01 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
@@ -259,7 +266,7 @@ public class Gui01 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(backMenu0BT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
                 .addComponent(registerBT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -406,7 +413,7 @@ public class Gui01 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel9)
@@ -723,10 +730,15 @@ public class Gui01 extends javax.swing.JFrame {
             String lastNames = lastNamesTF.getText();
             String age = ageTF.getText();
             String id = idTF.getText();
-            String group = String.valueOf(groupCB.getSelectedItem());
-            String gender = String.valueOf(genderCB.getSelectedItem());
-            //Asignar datos ingresados a un estudiante
-           
+            String group = String.valueOf(groupCB.getSelectedIndex()+1);
+            String gender = String.valueOf(genderCB.getSelectedItem()).toLowerCase();
+            StudentDTO student = new StudentDTO(firstNames, lastNames, age, gender.charAt(0), id, group);
+            try {
+                //Asignar datos ingresados a un estudiante
+                control.store(student);
+            } catch (IOException ex) {
+                Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
+            }
             //Se limpian los campos de texto
             firstNamesTF.setText("");
             lastNamesTF.setText("");
@@ -735,8 +747,7 @@ public class Gui01 extends javax.swing.JFrame {
             genderCB.setSelectedIndex(0);
             groupCB.setSelectedIndex(0);
             
-            //se informa que la operacion ha sido exitosa
-            JOptionPane.showMessageDialog(null, "Se ha matricula con exito al estudiante");
+            
         }
     }//GEN-LAST:event_registerBTActionPerformed
 
@@ -911,7 +922,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
     }
-
+    private StudentController control = new StudentController();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane MainPanel;
     private javax.swing.JTextField ageTF;

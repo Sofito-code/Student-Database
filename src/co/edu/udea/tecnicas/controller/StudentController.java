@@ -87,7 +87,10 @@ public class StudentController {
                 default:
                     JOptionPane.showMessageDialog(null, "No se pudo asignar el grupo");
             }
-            return answer1==answer2;
+            if(answer1==true&&answer2==true){
+                JOptionPane.showMessageDialog(null, "El estudiante se matriculo correctamente");                
+                return true;
+            }
         }
         JOptionPane.showMessageDialog(null, "El estudiante con identificacion " + student.getId() + " ya fue reguistrado");
         return false;       
@@ -202,8 +205,8 @@ public class StudentController {
                     default:
                         JOptionPane.showMessageDialog(null, "No se pudo asignar el grupo");
                 }
-                if(answer1==answer2){
-                    JOptionPane.showMessageDialog(null, "El estudiante se actualizo correctamente");
+                if(answer1==true&&answer2==true){
+                    JOptionPane.showMessageDialog(null, "El estudiante se actualizo correctamente");                
                     return true;
                 }
                 else{
@@ -335,23 +338,8 @@ public class StudentController {
         return fifth;
     }
 
-    public void setFirst(StudentDAO first) {
-        this.first = first;
+    public StudentDAO getAllStudents() {
+        return allStudents;
     }
-
-    public void setSecond(StudentDAO second) {
-        this.second = second;
-    }
-
-    public void setThird(StudentDAO third) {
-        this.third = third;
-    }
-
-    public void setFourth(StudentDAO fourth) {
-        this.fourth = fourth;
-    }
-
-    public void setFifth(StudentDAO fifth) {
-        this.fifth = fifth;
-    }
+    
 }
