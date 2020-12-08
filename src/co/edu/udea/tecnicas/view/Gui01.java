@@ -222,7 +222,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        genderCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "H", "M" }));
+        genderCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "H", "M" }));
 
         idTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -230,7 +230,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        groupCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primero", "Segundo", "Tercero", "Cuarto", "Quinto" }));
+        groupCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto" }));
 
         backMenu0BT.setText("Volver al Menu");
         backMenu0BT.addActionListener(new java.awt.event.ActionListener() {
@@ -519,6 +519,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
+        idUpdateTF.setEnabled(false);
         idUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 idUpdateTFKeyTyped(evt);
@@ -731,7 +732,7 @@ public class Gui01 extends javax.swing.JFrame {
             String lastNames = lastNamesTF.getText();
             String age = ageTF.getText();
             String id = idTF.getText();
-            String group = String.valueOf(groupCB.getSelectedIndex()+1);
+            String group = String.valueOf(groupCB.getSelectedIndex());
             String gender = String.valueOf(genderCB.getSelectedItem()).toLowerCase();
             StudentDTO student = new StudentDTO(firstNames, lastNames, age, gender.charAt(0), id, group);
             boolean bool = false;
@@ -860,11 +861,16 @@ public class Gui01 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Debe ingresar un documento para poder buscar");
         }
         else{
-            //Buscar estudiante y asignar informacion a variables
-            String currentNames = "Current Names";
-            String currentLastNames = "Current Last Names";
-            String currentAge = "Current Age";
-            String currentId = "Current Id";
+            StudentDTO student = new StudentDTO();
+            try {
+                student = control.search(idSearchUpdateTF.getText());
+            } catch (IOException ex) {
+                Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String currentNames = student.getNames();
+            String currentLastNames = student.getLastNames();
+            String currentAge = student.getYearsOld();
+            String currentId = student.getId();
             
             //Se muestra la informacion que se tiene del estudiante
             firstNamesUpdateTF.setText(currentNames);
@@ -885,11 +891,13 @@ public class Gui01 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Debes ingresar un numero de identificacion para borrar a un estudiante");
         }
         else{
-            String idStudentDeleted = idSearchUpdateTF.getText();
-            //Borrar estudiante con la id ingresada
+            try {
+                String idStudentDeleted = idSearchUpdateTF.getText();
+                control.delete(idStudentDeleted, true);
+            } catch (IOException ex) {
+                Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
-            //se informa de que qla operacion se ha realizado
-            JOptionPane.showMessageDialog(null, "Se ha borrado con exito al estudiante");
         }
     }//GEN-LAST:event_deleteStudentBTActionPerformed
 
@@ -899,25 +907,27 @@ public class Gui01 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Todos los campos debes ser llenados");
         }
         else{
-            // se obtien la informacion actualizada del estudiante
+            
             String newFirstNames = firstNamesUpdateTF.getText();
             String newlastsNames =lastNamesUpdateTF.getText();
             String newAge = ageUpdateTF.getText();
             String newId = idUpdateTF.getText();
             String newGender = String.valueOf(genderUpdateCB.getSelectedItem());
-            String newGroup = String.valueOf(groupUpdateCB.getSelectedItem());
+            int newGroup = groupUpdateCB.getSelectedIndex();
+            StudentDTO student = new StudentDTO(newFirstNames,newlastsNames,newAge,newGender.charAt(0),newId,String.valueOf(newGroup));
             
-            //Actualizar estudiante con los datos ingresados
-            
+            try {
+                //Actualizar estudiante con los datos ingresados
+                control.update(student);
+            } catch (IOException ex) {
+                Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
+            }
             //Se limpian los campos de texto
             idSearchUpdateTF.setText("");
             firstNamesUpdateTF.setText("");
             lastNamesUpdateTF.setText("");
             ageUpdateTF.setText("");
             idUpdateTF.setText("");
-            
-            //Se infroma que la operacion se han realizado 
-            JOptionPane.showMessageDialog(null,"Se han actualizado con exito los datos");
         }
     }//GEN-LAST:event_updateStudentBTActionPerformed
 
