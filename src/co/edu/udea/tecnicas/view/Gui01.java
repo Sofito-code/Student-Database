@@ -65,6 +65,9 @@ public class Gui01 extends javax.swing.JFrame {
         ageTF = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         firstNamesTF = new javax.swing.JTextField();
+        info0BT = new javax.swing.JButton();
+        info1BT = new javax.swing.JButton();
+        info2BT = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -73,7 +76,7 @@ public class Gui01 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         studentsTable = new javax.swing.JTable();
         backMenu1BT = new javax.swing.JButton();
-        infoBT = new javax.swing.JButton();
+        info3BT = new javax.swing.JButton();
         idSeacrhTF = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         backMenu2BT = new javax.swing.JButton();
@@ -96,6 +99,9 @@ public class Gui01 extends javax.swing.JFrame {
         genderUpdateCB = new javax.swing.JComboBox<>();
         groupUpdateCB = new javax.swing.JComboBox<>();
         deleteStudentBT = new javax.swing.JButton();
+        info4BT = new javax.swing.JButton();
+        info5BT = new javax.swing.JButton();
+        info6BT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -260,6 +266,27 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
+        info0BT.setText("?");
+        info0BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info0BTActionPerformed(evt);
+            }
+        });
+
+        info1BT.setText("?");
+        info1BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info1BTActionPerformed(evt);
+            }
+        });
+
+        info2BT.setText("?");
+        info2BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info2BTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -276,14 +303,19 @@ public class Gui01 extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lastNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(firstNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lastNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ageTF, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(info0BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(info1BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(info2BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,30 +337,33 @@ public class Gui01 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(26, 26, 26)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(lastNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lastNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(info1BT)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
                         .addComponent(idTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)
-                        .addComponent(firstNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(firstNamesTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(info0BT))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(groupCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGap(28, 28, 28)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(genderCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(ageTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(info2BT))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backMenu0BT)
                     .addComponent(registerBT))
@@ -393,10 +428,10 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        infoBT.setText("?");
-        infoBT.addActionListener(new java.awt.event.ActionListener() {
+        info3BT.setText("?");
+        info3BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoBTActionPerformed(evt);
+                info3BTActionPerformed(evt);
             }
         });
 
@@ -421,7 +456,7 @@ public class Gui01 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(infoBT)
+                        .addComponent(info3BT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(searchBT, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))))
@@ -449,7 +484,7 @@ public class Gui01 extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBT)
-                    .addComponent(infoBT))
+                    .addComponent(info3BT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(idSeacrhTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -544,6 +579,27 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
+        info4BT.setText("?");
+        info4BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info4BTActionPerformed(evt);
+            }
+        });
+
+        info5BT.setText("?");
+        info5BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info5BTActionPerformed(evt);
+            }
+        });
+
+        info6BT.setText("?");
+        info6BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info6BTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -584,7 +640,15 @@ public class Gui01 extends javax.swing.JFrame {
                                                 .addComponent(ageUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lastNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jLabel18))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(info4BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(info5BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(info6BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(46, 46, 46)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel20)
                                     .addComponent(jLabel19)
@@ -625,23 +689,26 @@ public class Gui01 extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
                             .addComponent(genderUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
-                            .addComponent(groupUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(groupUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(info6BT)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(firstNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                            .addComponent(firstNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(info4BT))
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
-                            .addComponent(lastNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
+                            .addComponent(lastNamesUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(info5BT))
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
                             .addComponent(ageUpdateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backMenu2BT)
                     .addComponent(updateStudentBT)
@@ -755,13 +822,13 @@ public class Gui01 extends javax.swing.JFrame {
     }//GEN-LAST:event_registerBTActionPerformed
 
     //boton de informacion para el usuario a la hora de buscar
-    private void infoBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoBTActionPerformed
+    private void info3BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info3BTActionPerformed
         JOptionPane.showMessageDialog(null, "Si desea Ver el listado de todos los estudiante seleccione"
                                             + " \"Todos\" y oprima el boton buscar.\n"
                                             + "Si lo que desea es buscar a un estudiante en especifico\n"
                                             + "seleccione \"Identificacion\", ingrese el numero de identificacion"
                                             + " y oprima el boton buscar.  ");
-    }//GEN-LAST:event_infoBTActionPerformed
+    }//GEN-LAST:event_info3BTActionPerformed
 
     //Restricciones para el campo de texto en la pestaña "Buscar"
     private void idSeacrhTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idSeacrhTFKeyTyped
@@ -943,6 +1010,31 @@ public class Gui01 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_updateStudentBTActionPerformed
 
+    //informacion util para el usuario a la hora de realizar el registro, la busqueda o la actualizacion de estudiantes
+    private void info0BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info0BTActionPerformed
+        JOptionPane.showMessageDialog(null,"El nombre debe tener por lo menos 3 caracteres");
+    }//GEN-LAST:event_info0BTActionPerformed
+
+    private void info1BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info1BTActionPerformed
+        JOptionPane.showMessageDialog(null,"El apellido debe tener por lo menos 3 caracteres");
+    }//GEN-LAST:event_info1BTActionPerformed
+
+    private void info2BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info2BTActionPerformed
+        JOptionPane.showMessageDialog(null,"El estudiante puede tener como minimo 5 años y 13 como maximo");
+    }//GEN-LAST:event_info2BTActionPerformed
+
+    private void info4BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info4BTActionPerformed
+        JOptionPane.showMessageDialog(null,"El nombre debe tener por lo menos 3 caracteres");
+    }//GEN-LAST:event_info4BTActionPerformed
+
+    private void info5BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info5BTActionPerformed
+        JOptionPane.showMessageDialog(null,"El apellido debe tener por lo menos 3 caracteres");
+    }//GEN-LAST:event_info5BTActionPerformed
+
+    private void info6BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info6BTActionPerformed
+        JOptionPane.showMessageDialog(null,"El estudiante puede tener como minimo 5 años y 13 como maximo");
+    }//GEN-LAST:event_info6BTActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -999,7 +1091,13 @@ public class Gui01 extends javax.swing.JFrame {
     private javax.swing.JTextField idSearchUpdateTF;
     private javax.swing.JTextField idTF;
     private javax.swing.JTextField idUpdateTF;
-    private javax.swing.JButton infoBT;
+    private javax.swing.JButton info0BT;
+    private javax.swing.JButton info1BT;
+    private javax.swing.JButton info2BT;
+    private javax.swing.JButton info3BT;
+    private javax.swing.JButton info4BT;
+    private javax.swing.JButton info5BT;
+    private javax.swing.JButton info6BT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
