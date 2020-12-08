@@ -903,6 +903,13 @@ public class Gui01 extends javax.swing.JFrame {
                 Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+            idSearchUpdateTF.setText("");
+            firstNamesUpdateTF.setText("");
+            lastNamesUpdateTF.setText("");
+            ageUpdateTF.setText("");
+            idUpdateTF.setText("");
+            genderUpdateCB.setSelectedIndex(0);
+            groupUpdateCB.setSelectedIndex(0);
         }
     }//GEN-LAST:event_deleteStudentBTActionPerformed
 
