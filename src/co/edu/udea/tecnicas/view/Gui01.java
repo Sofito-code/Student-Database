@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import co.edu.udea.tecnicas.model.StudentDTO;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,14 +20,14 @@ import java.util.logging.Logger;
  * @author Sofito-Chan
  */
 public class Gui01 extends javax.swing.JFrame {
-    DefaultTableModel model = new DefaultTableModel();
+    DefaultTableModel model;
 
     /**
      * Creates new form Gui01
      */
     public Gui01() {
-        initComponents();
         control.readAllGroups();
+        initComponents();
     }
 
     /**
@@ -733,21 +734,22 @@ public class Gui01 extends javax.swing.JFrame {
             String group = String.valueOf(groupCB.getSelectedIndex()+1);
             String gender = String.valueOf(genderCB.getSelectedItem()).toLowerCase();
             StudentDTO student = new StudentDTO(firstNames, lastNames, age, gender.charAt(0), id, group);
+            boolean bool = false;
             try {
                 //Asignar datos ingresados a un estudiante
-                control.store(student);
+                bool = control.store(student);
             } catch (IOException ex) {
                 Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
             }
-            //Se limpian los campos de texto
-            firstNamesTF.setText("");
-            lastNamesTF.setText("");
-            ageTF.setText("");
-            idTF.setText("");
-            genderCB.setSelectedIndex(0);
-            groupCB.setSelectedIndex(0);
-            
-            
+            if(bool){
+                //Se limpian los campos de texto
+                firstNamesTF.setText("");
+                lastNamesTF.setText("");
+                ageTF.setText("");
+                idTF.setText("");
+                genderCB.setSelectedIndex(0);
+                groupCB.setSelectedIndex(0);
+            }
         }
     }//GEN-LAST:event_registerBTActionPerformed
 
@@ -772,16 +774,48 @@ public class Gui01 extends javax.swing.JFrame {
     
     //Boton "Buscar" pestaña "Buscar"
     private void searchBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTActionPerformed
+        model = (DefaultTableModel)studentsTable.getModel();
         if(String.valueOf(searchOptionCB.getSelectedItem()).equals("Todos")){
-            //mostrar todos los estudiantes en la tabla
+            StudentDTO student = new StudentDTO();
+            String[] aux = new String[7];
+            List<StudentDTO> all = control.getAllStudents().listing();
+            for (int i = 0; i < all.size(); i++) {
+                student = all.get(i);
+                aux[0] = student.getNames();
+                aux[1] = student.getLastNames();
+                aux[2] = student.getYearsOld();
+                aux[3] = student.getId();
+                aux[4] = String.valueOf(student.getGender());
+                aux[5] = student.getGroup();
+                aux[6] = student.getRegistrationNumber();
+                
+                model.addRow(aux);
+            }
+            
         }
-        else if(String.valueOf(searchOptionCB.getSelectedItem()).equals("identificacion")){
+        else if(String.valueOf(searchOptionCB.getSelectedItem()).equals("Identificacion")){
             //Se comprueba que el campo de texto no este vacio a la hora de buscar
             if(idSeacrhTF.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Ingrese la identificacion del estudiante\n para realizar a busqueda");
             }
             else{
-                //mostrar estudiante con la identificacion Ingresada 
+                String id = String.valueOf(searchOptionCB.getSelectedItem());
+                String[] aux = new String[7];
+                StudentDTO student = new StudentDTO();
+                try {
+                    student = control.search(id);
+                } catch (IOException ex) {
+                    Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                aux[0] = student.getNames();
+                aux[1] = student.getLastNames();
+                aux[2] = student.getYearsOld();
+                aux[3] = student.getId();
+                aux[4] = String.valueOf(student.getGender());
+                aux[5] = student.getGroup();
+                aux[6] = student.getRegistrationNumber();
+                
+                model.addRow(aux);
                 
                 //se limpia el campo de texto
                 idSeacrhTF.setText("");
