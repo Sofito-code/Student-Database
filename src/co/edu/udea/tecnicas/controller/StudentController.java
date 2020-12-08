@@ -103,12 +103,7 @@ public class StudentController {
     public List<StudentDTO> listing(StudentDAO studentList){
         return studentList.listing();
     }
-    public static void main(String[] args) throws IOException {
-        StudentController c = new StudentController();
-        c.readAllGroups();
-        
-        System.out.println(c.search("1234"));        
-    }
+    
     public void readAllGroups(){
         try {
             first.setList(firstFile.read());
