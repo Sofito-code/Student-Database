@@ -777,6 +777,7 @@ public class Gui01 extends javax.swing.JFrame {
     private void searchBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTActionPerformed
         model = (DefaultTableModel)studentsTable.getModel();
         if(String.valueOf(searchOptionCB.getSelectedItem()).equals("Todos")){
+            model.setRowCount(0);
             StudentDTO student = new StudentDTO();
             String[] aux = new String[7];
             List<StudentDTO> all = control.getAllStudents().listing();
@@ -800,6 +801,7 @@ public class Gui01 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ingrese la identificacion del estudiante\n para realizar a busqueda");
             }
             else{
+                model.setRowCount(0);
                 String id = idSeacrhTF.getText();
                 String[] aux = new String[7];
                 StudentDTO student = new StudentDTO();     
