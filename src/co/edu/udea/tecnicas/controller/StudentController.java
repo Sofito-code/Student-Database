@@ -103,7 +103,12 @@ public class StudentController {
     public List<StudentDTO> listing(StudentDAO studentList){
         return studentList.listing();
     }
-//
+    public static void main(String[] args) throws IOException {
+        StudentController c = new StudentController();
+        c.readAllGroups();
+        
+        System.out.println(c.search("1234"));        
+    }
     public void readAllGroups(){
         try {
             first.setList(firstFile.read());
@@ -292,13 +297,14 @@ public class StudentController {
                     JOptionPane.showMessageDialog(null, "El estudiante se elimino correctamente");                
                     return true;
                 }
-            }            
-            else{
+                else{
                 JOptionPane.showMessageDialog(null, "ocurrio un error al intentar eliminar el estudiante, contacte con soporte técnico");
                 System.out.println("lista:" + answer1);
                 System.out.println("archivo:" + answer2);
                 return false;
-            } 
+            }
+            }            
+             
         }
         else{
             JOptionPane.showMessageDialog(null, "El estudiante no existe");
@@ -309,13 +315,7 @@ public class StudentController {
     }
    
     public StudentDTO search(String id) throws IOException {
-        if(allStudents.read(id)== null){
-            JOptionPane.showMessageDialog(null, "El estudiante no existe");
-            return null;
-        }
-        else{
-            return allStudents.read(id);
-        }        
+        return allStudents.read(id);       
     }
     
     public StudentDAO getFirst() {

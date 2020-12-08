@@ -25,9 +25,9 @@ public class Gui01 extends javax.swing.JFrame {
     /**
      * Creates new form Gui01
      */
-    public Gui01() {
-        control.readAllGroups();
+    public Gui01() {        
         initComponents();
+        control.readAllGroups();
     }
 
     /**
@@ -419,8 +419,8 @@ public class Gui01 extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(infoBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(searchBT, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -436,7 +436,7 @@ public class Gui01 extends javax.swing.JFrame {
                         .addComponent(backMenu1BT))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(idSeacrhTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(idSeacrhTF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -450,7 +450,7 @@ public class Gui01 extends javax.swing.JFrame {
                     .addComponent(searchOptionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBT)
                     .addComponent(infoBT))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(idSeacrhTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -800,14 +800,17 @@ public class Gui01 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ingrese la identificacion del estudiante\n para realizar a busqueda");
             }
             else{
-                String id = String.valueOf(searchOptionCB.getSelectedItem());
+                String id = idSeacrhTF.getText();
                 String[] aux = new String[7];
-                StudentDTO student = new StudentDTO();
+                StudentDTO student = new StudentDTO();     
                 try {
                     student = control.search(id);
+                      
                 } catch (IOException ex) {
-                    Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
+                    
+                    ex.printStackTrace();
                 }
+                
                 aux[0] = student.getNames();
                 aux[1] = student.getLastNames();
                 aux[2] = student.getYearsOld();
@@ -912,7 +915,7 @@ public class Gui01 extends javax.swing.JFrame {
             String newlastsNames =lastNamesUpdateTF.getText();
             String newAge = ageUpdateTF.getText();
             String newId = idUpdateTF.getText();
-            String newGender = String.valueOf(genderUpdateCB.getSelectedItem());
+            String newGender = String.valueOf(genderUpdateCB.getSelectedItem()).toLowerCase();
             int newGroup = groupUpdateCB.getSelectedIndex();
             StudentDTO student = new StudentDTO(newFirstNames,newlastsNames,newAge,newGender.charAt(0),newId,String.valueOf(newGroup));
             
