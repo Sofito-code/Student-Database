@@ -1,1 +1,3 @@
-270,Sofi,test,6,h,100538668,1
+551,Sofi,test,6,m,100538668,4
+686,Thomas,Garcia Vargas,12,h,1035441691,4
+486,Sofia,Vanegas,7,m,89002,5

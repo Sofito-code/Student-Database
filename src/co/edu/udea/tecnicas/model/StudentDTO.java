@@ -14,17 +14,15 @@ public class StudentDTO
     private char gender;
     private String id;        
     private String group;
-    private String registrationNumber;
+    private String registrationNumber = Integer.toString(new Random().nextInt(1000));
 
     public StudentDTO(String names, String lastNames, String yearsOld, char gender, String id, String group) {
-        Random r = new Random();
         this.names = names;
         this.lastNames = lastNames;
         this.yearsOld = yearsOld;
         this.gender = gender;
         this.id = id;
         this.group = group;
-        this.registrationNumber = Integer.toString(r.nextInt(1000));
     }
 
     

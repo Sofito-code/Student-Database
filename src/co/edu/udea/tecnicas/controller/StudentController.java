@@ -29,7 +29,7 @@ public class StudentController {
     
     public boolean store(StudentDTO student) throws IOException{
         StudentDTO studentRequest = allStudents.read(student.getId());
-        if(studentRequest == null){
+        if(studentRequest.getId().equalsIgnoreCase("n")){
             boolean answer2 = false;
             boolean answer1 = false;
             if(!deal.store(student)) return false;        
@@ -87,12 +87,11 @@ public class StudentController {
                 default:
                     JOptionPane.showMessageDialog(null, "No se pudo asignar el grupo");
             }
-            if(answer1==true&&answer2==true){
-                JOptionPane.showMessageDialog(null, "El estudiante se matriculo correctamente");                
+            if(answer1==true&&answer2==true){                               
                 return true;
             }
         }
-        JOptionPane.showMessageDialog(null, "El estudiante con identificacion " + student.getId() + " ya fue reguistrado");
+        JOptionPane.showMessageDialog(null, "El estudiante con identificación " + student.getId() + " ya fue registrado");
         return false;       
     }
     /**
@@ -119,7 +118,7 @@ public class StudentController {
 
     public boolean update(StudentDTO student) throws IOException{
         StudentDTO studentRequest = allStudents.read(student.getId());
-        if(studentRequest != null){
+        if(!studentRequest.getId().equalsIgnoreCase("n")){
             boolean answer1 = false;
             boolean answer2 = false;
             if(!deal.update(student)) return false;
@@ -178,7 +177,14 @@ public class StudentController {
                     default:
                         JOptionPane.showMessageDialog(null, "No se pudo asignar el grupo");
                 }
-                return answer1==answer2;
+                if(answer1==true&&answer2==true){
+                    JOptionPane.showMessageDialog(null, "El estudiante se actualizo correctamente");                
+                    return true;
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "El estudiante no se pudo actualizar");
+                    return false;
+                }
             }
             else{
                 switch(studentRequest.getGroup()){
@@ -213,17 +219,14 @@ public class StudentController {
                     JOptionPane.showMessageDialog(null, "El estudiante no se pudo actualizar");
                     return false;
                 }
-            }
-            //preguntar si esta en el mismo grupo
-            //sisi entonces solo actualiza los datos, reeescribe archivos
-            
-            //y sino entonces lo ambia de lista, reescrive archivos
+            }            
         }     
         return false;
     }
     
     public boolean delete(String id, boolean validation) throws IOException{
-        StudentDTO studentRequest = allStudents.read(id);        
+        StudentDTO studentRequest = allStudents.read(id); 
+        StudentDTO empty = new StudentDTO();
         boolean answer1 = false;
         boolean answer2 = false;
         if(validation){
@@ -232,7 +235,11 @@ public class StudentController {
                 return false;
             }
         }        
-        if(studentRequest != null){
+        if(studentRequest == empty){
+            JOptionPane.showMessageDialog(null, "El estudiante no existe");
+            return false;             
+        }
+        else{
             switch(studentRequest.getGroup()){
                 case "1":
                         answer1 = first.delete(studentRequest.getId());
@@ -285,7 +292,7 @@ public class StudentController {
                         }
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "No se pudo aliminar el estudiente");
+                        JOptionPane.showMessageDialog(null, "No se pudo eliminar el estudiente");
             }
             if(validation){
                 if(answer1==true&&answer2==true){
@@ -293,20 +300,16 @@ public class StudentController {
                     return true;
                 }
                 else{
-                JOptionPane.showMessageDialog(null, "ocurrio un error al intentar eliminar el estudiante, contacte con soporte técnico");
-                System.out.println("lista:" + answer1);
-                System.out.println("archivo:" + answer2);
-                return false;
+                    JOptionPane.showMessageDialog(null, "ocurrio un error al intentar eliminar el estudiante, contacte con soporte técnico");
+                    System.out.println("lista:" + answer1);
+                    System.out.println("archivo:" + answer2);
+                    return false;
+                }
             }
-            }            
-             
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "El estudiante no existe");
-            return false;
-        }
-        JOptionPane.showMessageDialog(null, "El estudiante no fue eliminado");
-        return false;
+            else{
+                return true;
+            }
+        }        
     }
    
     public StudentDTO search(String id) throws IOException {

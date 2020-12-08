@@ -27,7 +27,8 @@ public class StudentList implements StudentDAO
             if (student.getId().equals(id))
                 return student;
         }
-        return new StudentDTO();
+        StudentDTO vacio = new StudentDTO();
+        return vacio;
     }
 
     @Override

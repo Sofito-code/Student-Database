@@ -8,12 +8,12 @@ public class StudentDeal {
     public boolean store(StudentDTO student) {
         
         boolean pass = true;
-        if(student.getNames().length()<3){
-            JOptionPane.showMessageDialog(null, "Los nombres deben ser de 3 letras o más");
+        if(student.getNames().length()<3 || student.getNames().length()>35){
+            JOptionPane.showMessageDialog(null, "Los nombres deben tener entre 3 y 35 caracteres");
             pass=false;
         }
-        if(student.getLastNames().length()<3){
-            JOptionPane.showMessageDialog(null, "Los apellidos deben ser de 3 letras o más");
+        if(student.getLastNames().length()<3 || student.getLastNames().length()>35){
+            JOptionPane.showMessageDialog(null, "Los apellidos deben tener entre 3 y 35 caracteres");
             pass=false;
         }
         if(isNumeric(student.getYearsOld())){

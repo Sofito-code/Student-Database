@@ -145,9 +145,11 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci ante, lacinia nec erat et");
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Bienvenido a sistema de matricula estudiantil para niños de primaria");
 
-        jLabel12.setText("Que desea hacer?");
+        jLabel12.setText("¿Que desea hacer?");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -157,20 +159,14 @@ public class Gui01 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(183, 183, 183))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(exitBT)
-                                .addGap(232, 232, 232))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(updateDeleteStudentBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -179,6 +175,15 @@ public class Gui01 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(registerStudentBT, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(exitBT))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jLabel12)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,15 +194,15 @@ public class Gui01 extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(registerStudentBT)
                 .addGap(18, 18, 18)
                 .addComponent(searchStudentBt)
                 .addGap(18, 18, 18)
                 .addComponent(updateDeleteStudentBT)
-                .addGap(39, 39, 39)
+                .addGap(27, 27, 27)
                 .addComponent(exitBT)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         MainPanel.addTab("Menu", jPanel1);
@@ -218,7 +223,7 @@ public class Gui01 extends javax.swing.JFrame {
         jLabel5.setText("Genero    ");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("Identificacion");
+        jLabel6.setText("Identificación");
 
         jLabel7.setText("Grupo");
 
@@ -507,7 +512,7 @@ public class Gui01 extends javax.swing.JFrame {
         jLabel13.setText("Actualizar estudiante");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel14.setText("Ingrese el numero de identificacion del estudiante: ");
+        jLabel14.setText("Ingrese el número de identificación del estudiante: ");
 
         idSearchUpdateTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -522,7 +527,7 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setText("Inforcacion del estudiante");
+        jLabel15.setText("Información del estudiante");
 
         jLabel16.setText("Nombres");
 
@@ -568,7 +573,12 @@ public class Gui01 extends javax.swing.JFrame {
             }
         });
 
-        genderUpdateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "M", "F" }));
+        genderUpdateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "H", "M" }));
+        genderUpdateCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genderUpdateCBActionPerformed(evt);
+            }
+        });
 
         groupUpdateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto" }));
 
@@ -611,12 +621,12 @@ public class Gui01 extends javax.swing.JFrame {
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(idSearchUpdateTF)
-                        .addGap(34, 34, 34)
-                        .addComponent(updateSearchBT))
+                        .addGap(18, 18, 18)
+                        .addComponent(updateSearchBT)
+                        .addGap(22, 22, 22))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel15)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -648,11 +658,17 @@ public class Gui01 extends javax.swing.JFrame {
                                             .addComponent(info4BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(info5BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addComponent(info6BT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(46, 46, 46)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jLabel21)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(46, 46, 46)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel20)
+                                            .addComponent(jLabel21))
+                                        .addGap(34, 34, 34))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel19)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(deleteStudentBT)
@@ -810,6 +826,7 @@ public class Gui01 extends javax.swing.JFrame {
                 Logger.getLogger(Gui01.class.getName()).log(Level.SEVERE, null, ex);
             }
             if(bool){
+                JOptionPane.showMessageDialog(null, "El estudiante se matriculo correctamente"); 
                 //Se limpian los campos de texto
                 firstNamesTF.setText("");
                 lastNamesTF.setText("");
@@ -817,6 +834,7 @@ public class Gui01 extends javax.swing.JFrame {
                 idTF.setText("");
                 genderCB.setSelectedIndex(0);
                 groupCB.setSelectedIndex(0);
+                
             }
         }
     }//GEN-LAST:event_registerBTActionPerformed
@@ -1024,16 +1042,20 @@ public class Gui01 extends javax.swing.JFrame {
     }//GEN-LAST:event_info2BTActionPerformed
 
     private void info4BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info4BTActionPerformed
-        JOptionPane.showMessageDialog(null,"El nombre debe tener por lo menos 3 caracteres");
+        JOptionPane.showMessageDialog(null,"El nombre debe tener entre 3 y 35 caracteres");
     }//GEN-LAST:event_info4BTActionPerformed
 
     private void info5BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info5BTActionPerformed
-        JOptionPane.showMessageDialog(null,"El apellido debe tener por lo menos 3 caracteres");
+        JOptionPane.showMessageDialog(null,"El apellido debe tener entre 3 y 35 caracteres");
     }//GEN-LAST:event_info5BTActionPerformed
 
     private void info6BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info6BTActionPerformed
         JOptionPane.showMessageDialog(null,"El estudiante puede tener como minimo 5 años y 13 como maximo");
     }//GEN-LAST:event_info6BTActionPerformed
+
+    private void genderUpdateCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderUpdateCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genderUpdateCBActionPerformed
 
     
     /**
